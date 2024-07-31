@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj6xvnc0d7vq7"]
+
+[ext_resource type="VideoStream" path="res://miscellaneous/first_boot/intro.ogv" id="1_n6cib"]
+[ext_resource type="Script" path="res://miscellaneous/first_boot/intro.gd" id="2_mejl8"]
+[ext_resource type="AudioStream" uid="uid://dx4e5oeywjyn6" path="res://miscellaneous/first_boot/ticking2.mp3" id="3_8g6ji"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+stream = ExtResource("1_n6cib")
+autoplay = true
+expand = true
+script = ExtResource("2_mejl8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8g6ji")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

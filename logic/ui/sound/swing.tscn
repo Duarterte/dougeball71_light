@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bav51iesx1d21"]
+
+[ext_resource type="AudioStream" uid="uid://b4gmdr218wvl8" path="res://logic/ui/sound/swing-whoosh-5-198498.mp3" id="1_y0vfi"]
+
+[node name="Swing" type="AudioStreamPlayer"]
+stream = ExtResource("1_y0vfi")

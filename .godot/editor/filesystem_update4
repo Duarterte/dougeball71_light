@@ -1,0 +1,16 @@
+res://miscellaneous/first_boot/intro.tscn
+res://characters/player.tscn
+res://characters/zomby.tscn
+res://logic/configuration/ZVMmain.tscn
+res://world/Level1.tscn
+res://logic/ui/MainMenu.tscn
+res://assets/ball.tscn
+res://logic/rootScn.tscn
+res://logic/in_game_logic/spawner.tscn
+res://logic/in_game_logic/Spawner.gd
+res://logic/ui/sound/swing.tscn
+res://logic/ui/sound/menuSound.tscn
+res://characters/playerScript.gd
+res://logic/ui/sound/blipSelectSound.tscn
+res://characters/zomby.gd
+res://logic/configuration/ZVMmain.gd

@@ -1,0 +1,14 @@
+res://addons/zl_init_plugin/AddonDock.tscn::c173f1509978a857ed8ba70c85385437::1722001353::res://.godot/exported/133200997/export-b7df100b8dcfe17d6fa94db31ba391d0-AddonDock.scn
+res://assets/ball.tscn::be63b8e8b99e2afddf60b8e536a7c0ed::1722445850::res://.godot/exported/133200997/export-d9d8b68d398d1a6ba75651b2f5bf8d6a-ball.scn
+res://characters/player.tscn::4106c7dc4fbb79d4548e4e40a21a65a9::1722445850::res://.godot/exported/133200997/export-954aa54276f838cf6291a154b8d98bd0-player.scn
+res://characters/zomby.tscn::ba666646fcae8b1ff547ecb24385e6a4::1722445850::res://.godot/exported/133200997/export-dc9acd7bfb9b1d00fba340d97aa0c2ea-zomby.scn
+res://logic/configuration/ZVMmain.tscn::7dcb42b2f2e42dc11a0bd6415130641a::1722445850::res://.godot/exported/133200997/export-c3aeb7751a91281dbf54f8b3add2d34b-ZVMmain.scn
+res://logic/in_game_logic/spawner.tscn::62b304811146594f7afab4ce6aaeb645::1722445850::res://.godot/exported/133200997/export-a2f496ec41360073d8b2bbd2df10cfc1-spawner.scn
+res://logic/ui/sound/blipSelectSound.tscn::8d72c1c6d11159bd3634f08584ed9e3d::1722445850::res://.godot/exported/133200997/export-40ec52fbe0a40590b734ce90b6197ebe-blipSelectSound.scn
+res://logic/ui/sound/menuSound.tscn::208733e87419d98cd1de5e5d8b119835::1722445850::res://.godot/exported/133200997/export-ad34d5a926a9d5095bda065af1e91682-menuSound.scn
+res://logic/ui/sound/swing.tscn::c4ab4331c4222f2e4f0615318f4ecb46::1722445850::res://.godot/exported/133200997/export-dc52574d0419f9424752be912469c43e-swing.scn
+res://logic/ui/MainMenu.tscn::7525c0c28b5448390c70052a115931dd::1722445850::res://.godot/exported/133200997/export-b406027a1f23bd36157b9e874820439e-MainMenu.scn
+res://logic/ui/settings.tscn::131a2d8aedb5bef0a387b29ac1f8db85::1722001353::res://.godot/exported/133200997/export-d1bfe146c8b8f65c0b59239ad1de8829-settings.scn
+res://logic/rootScn.tscn::f35d0bba21bb6b65e4b580d4ac671732::1722445850::res://.godot/exported/133200997/export-63ab53ff0fd69f455190be261a589ade-rootScn.scn
+res://miscellaneous/first_boot/intro.tscn::294ad9f6931efbe215c98411dd6aa9a9::1722445850::res://.godot/exported/133200997/export-69e74842d5f3d844308f5607b8026ebc-intro.scn
+res://world/Level1.tscn::c7ba5fe19511927f7498fa616560665f::1722445850::res://.godot/exported/133200997/export-16f32dc985260a9fc293d033d1e1cb7f-Level1.scn

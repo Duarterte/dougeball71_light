@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://f41wub5py1t5"]
+
+[ext_resource type="AudioStream" uid="uid://dwgwv7rsj3fep" path="res://logic/ui/sound/blipSelect.wav" id="1_me837"]
+[ext_resource type="AudioStream" uid="uid://6lippaalirjq" path="res://logic/ui/sound/click.mp3" id="2_cxsp1"]
+[ext_resource type="AudioStream" uid="uid://b4gmdr218wvl8" path="res://logic/ui/sound/swing-whoosh-5-198498.mp3" id="3_6yqaq"]
+
+[node name="MenuSound" type="Node"]
+
+[node name="blip" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_me837")
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_cxsp1")
+
+[node name="swing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6yqaq")

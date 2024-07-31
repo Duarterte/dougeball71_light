@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw82d5se1l0j6"]
+
+[ext_resource type="Script" path="res://characters/playerScript.gd" id="1_3na7e"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t2dot"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 0
+script = ExtResource("1_3na7e")
+
+[node name="PlayerCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.4)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("ConvexPolygonShape3D_t2dot")

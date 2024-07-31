@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7ctshbvjk7ot"]
+
+[ext_resource type="PackedScene" uid="uid://dldj2bnax5vc6" path="res://logic/configuration/ZVMmain.tscn" id="1_vgicv"]
+[ext_resource type="PackedScene" uid="uid://nhx6nh0hpm76" path="res://logic/ui/MainMenu.tscn" id="2_4sekh"]
+
+[node name="RootScn" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ZVmain" parent="." instance=ExtResource("1_vgicv")]
+layout_mode = 1
+
+[node name="MainMenu" parent="ZVmain" instance=ExtResource("2_4sekh")]
+layout_mode = 1

@@ -1,0 +1,101 @@
+[gd_scene load_steps=13 format=3 uid="uid://cks7v6wj1ikb8"]
+
+[ext_resource type="Script" path="res://logic/configuration/ZVMmain.gd" id="1_a3e34"]
+[ext_resource type="PackedScene" uid="uid://cw82d5se1l0j6" path="res://characters/player.tscn" id="2_bcxd7"]
+[ext_resource type="Texture2D" uid="uid://dvbfcbmunfy0e" path="res://world/textures/terrain_joda.png" id="2_m5gju"]
+[ext_resource type="PackedScene" uid="uid://bedj5roxowdy1" path="res://logic/in_game_logic/spawner.tscn" id="4_ku2xq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_slx7c"]
+sky_top_color = Color(0, 1, 1, 1)
+sky_horizon_color = Color(0.55, 0.79225, 0.78325, 1)
+ground_horizon_color = Color(0.55, 0.79225, 0.78325, 1)
+
+[sub_resource type="Sky" id="Sky_jm3qi"]
+sky_material = SubResource("ProceduralSkyMaterial_slx7c")
+
+[sub_resource type="Environment" id="Environment_i4kve"]
+background_mode = 1
+background_color = Color(0.813655, 0.857921, 0.987665, 1)
+sky = SubResource("Sky_jm3qi")
+reflected_light_source = 1
+tonemap_mode = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6faq"]
+resource_name = "Material.001"
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("2_m5gju")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_t3y4h"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(3, 0, 0, 0, 2, 0, 3, 0, 1, 0, 0, 0),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hfwh7"]
+resource_name = "terrain_Plane"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2.00001),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(3, 0, 0, 0, 2, 0, 3, 0, 1, 0, 0, 0),
+"material": SubResource("StandardMaterial3D_w6faq"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 191, 255, 255, 0, 0, 254, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_t3y4h")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_p27iq"]
+data = PackedVector3Array(1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1, 1, 0, 1, -1, 0, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fe5wd"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="ZVMain" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_a3e34")
+
+[node name="world" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="world"]
+environment = SubResource("Environment_i4kve")
+
+[node name="Plane" type="MeshInstance3D" parent="world"]
+transform = Transform3D(32, 0, 0, 0, 1, 0, 0, 0, 32, 0, 0, 0)
+gi_mode = 0
+mesh = SubResource("ArrayMesh_hfwh7")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="world/Plane"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/Plane/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_p27iq")
+
+[node name="Player" parent="world" instance=ExtResource("2_bcxd7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="Spawner" parent="world" node_paths=PackedStringArray("player") instance=ExtResource("4_ku2xq")]
+player = NodePath("../Player")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="world"]
+transform = Transform3D(63, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 0)
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_fe5wd")

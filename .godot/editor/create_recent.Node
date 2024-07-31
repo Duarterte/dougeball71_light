@@ -1,0 +1,13 @@
+AudioStreamPlayer3D
+MeshInstance3D
+MultiMeshInstance3D
+AudioStreamPlayer
+Timer
+Node3D
+Area3D
+RigidBody3D
+CharacterBody3D
+CollisionPolygon3D
+CollisionShape3D
+OmniLight3D
+ZVMain
