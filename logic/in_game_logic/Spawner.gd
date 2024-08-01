@@ -33,7 +33,7 @@ func _on_timer_timeout():
 	if not zmb.isAlive:
 		if is_instance_valid(aliveZombies.find(zmb)): aliveZombies.erase(aliveZombies.find(zmb))
 		zmb.isAlive = true
-		zmb.global_position = Vector3(randf_range(-31.5, 31.5), 0., randf_range(-31.5, 31.5))
+		zmb.global_position = Vector3(randf_range(player.global_position.x-31.5, player.global_position.x+31.5), 0., randf_range(player.global_position.z-31.5, player.global_position.z+31.5))
 		zmb.visible = true
 		aliveZombies.append(zmb)
 	if currentZombieIteration < NUMBEROFZOOMBIES-2: currentZombieIteration += 1

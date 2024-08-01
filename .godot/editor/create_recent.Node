@@ -1,5 +1,10 @@
-AudioStreamPlayer3D
+CenterContainer
+Control
+Polygon2D
+MeshInstance2D
+Line2D
 MeshInstance3D
+AudioStreamPlayer3D
 MultiMeshInstance3D
 AudioStreamPlayer
 Timer
@@ -7,7 +12,3 @@ Node3D
 Area3D
 RigidBody3D
 CharacterBody3D
-CollisionPolygon3D
-CollisionShape3D
-OmniLight3D
-ZVMain

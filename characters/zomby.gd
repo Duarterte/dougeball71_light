@@ -17,6 +17,7 @@ func persuit(frame: int, draw: int, offset: int, speed: float)->void:
 			global_position += global_transform.basis.z.normalized()*3.
 			player.lifes -= 1
 			$AudioStreamPlayer3D2.play(0.0)
+			player.getHit()
 	else: return
 
 	
@@ -27,7 +28,8 @@ func persuit(frame: int, draw: int, offset: int, speed: float)->void:
 	
 func _on_area_3d_body_entered(body):	
 	visible = false
-	$AudioStreamPlayer3D.play(0)
-	body.queue_free()
+	var ballHitSound: AudioStreamPlayer3D = $AudioStreamPlayer3D
+	if isAlive: ballHitSound.play(0)
 	isAlive = false
+	body.queue_free()
 	global_position.y = -100

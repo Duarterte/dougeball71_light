@@ -9,7 +9,22 @@ var ball = preload("res://assets/ball.tscn")
 @onready var lifes: int = 5
 var ballInstance: RigidBody3D
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+func getHit():
+	var filterEffect: MeshInstance3D = $PlayerCamera/cameraPostProcessing
+	var material: Material = filterEffect.get_active_material(0)
+	material.albedo_color = Color(1, 0, 0, .5)
+	await  get_tree().create_timer(.075).timeout
+	material.albedo_color = Color(1, 1, 1, .3)
+	await  get_tree().create_timer(.075).timeout
+	material.albedo_color = Color(1, 0, 0, .5)
+	await  get_tree().create_timer(.075).timeout
+	material.albedo_color = Color(1, 1, 1, .3)
+	await  get_tree().create_timer(.075).timeout
+	material.albedo_color = Color(0, 0, 0, 0)
+	
 func _ready():
+	$PlayerCamera/cameraPostProcessing.get_active_material(0).albedo_color = Color(0, 0, 0, 0)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 func _input(event):
@@ -36,12 +51,21 @@ func _physics_process(delta):
 		get_tree().change_scene_to_file("res://logic/rootScn.tscn")
 	if ballInstance != null and isBallPlaying and Input.is_action_pressed("Throw"):
 		ballInstance.global_position = global_transform.origin+(-global_transform.basis.z.normalized())+(global_transform.basis.y.normalized()*1.45+global_transform.basis.x.normalized()*.5)
+		ballInstance.rotation_degrees = rotation_degrees
+	if Input.is_action_just_released("Throw"):
+		var currentBall = ballInstance
+		print(currentBall.get_child(0).get_aabb().size*.5)
+		if is_instance_valid(currentBall): currentBall.global_position = playerCamera.global_position
+		if is_instance_valid(currentBall): currentBall.rotation_degrees = playerCamera.rotation_degrees 
+		MenuSound.get_child(2).play(0)
+		if is_instance_valid(currentBall): currentBall.apply_central_impulse(-(playerCamera.global_transform.basis.z)* 12.5)
+		await  get_tree().create_timer(2.).timeout
+		if is_instance_valid(currentBall): currentBall.queue_free()
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
