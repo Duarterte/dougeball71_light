@@ -17,3 +17,4 @@ res://logic/in_game_logic/Spawner.gd
 res://characters/playerScript.gd
 res://characters/zomby.gd
 res://characters/CenterContainer.gd
+res://logic/data/SGlobal.gd

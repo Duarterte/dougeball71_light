@@ -1,7 +1,7 @@
 extends Control
 
-var gameName: String = "Game Title in res://logic/data/SGlobal.gd"
-var version: String  = "V0.0.1"
+var gameName: String = "Dodgeball 71"
+var version: String  = "V0.0.2"
 var firstBoot: bool  = true
 var config: Array[bool]
 var configValues: Dictionary
