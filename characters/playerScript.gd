@@ -39,12 +39,7 @@ func _input(event):
 		isBallPlaying = true
 		ballInstance = ball.instantiate()
 		get_parent().add_child(ballInstance)
-	if event.is_action_released("Throw"):
-		var currentBall = ballInstance
-		MenuSound.get_child(2).play(0)
-		if is_instance_valid(currentBall): currentBall.apply_central_impulse(-playerCamera.global_transform.basis.z * 12.5)
-		await  get_tree().create_timer(2.).timeout
-		if is_instance_valid(currentBall): currentBall.queue_free()
+	
 		
 func _physics_process(delta):
 	if lifes < 1:
@@ -54,7 +49,6 @@ func _physics_process(delta):
 		ballInstance.rotation_degrees = rotation_degrees
 	if Input.is_action_just_released("Throw"):
 		var currentBall = ballInstance
-		print(currentBall.get_child(0).get_aabb().size*.5)
 		if is_instance_valid(currentBall): currentBall.global_position = playerCamera.global_position
 		if is_instance_valid(currentBall): currentBall.rotation_degrees = playerCamera.rotation_degrees 
 		MenuSound.get_child(2).play(0)

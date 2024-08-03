@@ -1,7 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://nhx6nh0hpm76"]
+[gd_scene load_steps=10 format=3 uid="uid://nhx6nh0hpm76"]
 
+[ext_resource type="Theme" uid="uid://dvird718wefmo" path="res://logic/ui/MainMenu.tres" id="1_1ifpy"]
 [ext_resource type="Script" path="res://logic/ui/MainMenu.gd" id="1_5d2fq"]
 [ext_resource type="PackedScene" uid="uid://f41wub5py1t5" path="res://logic/ui/sound/menuSound.tscn" id="2_hqdf7"]
+[ext_resource type="Shader" path="res://logic/ui/MainMenu.gdshader" id="3_syaso"]
+[ext_resource type="Texture2D" uid="uid://c8fnpauo30aoq" path="res://logic/ui/zmbMask.png" id="4_lq6pt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uwyu2"]
+shader = ExtResource("3_syaso")
+shader_parameter/zombyTexture = ExtResource("4_lq6pt")
 
 [sub_resource type="Animation" id="Animation_bd8vy"]
 length = 0.001
@@ -48,7 +55,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_1ifpy")
 script = ExtResource("1_5d2fq")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+material = SubResource("ShaderMaterial_uwyu2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MenuSound" parent="." instance=ExtResource("2_hqdf7")]
 
@@ -128,6 +153,7 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="SceneEntryCurtain" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.999

@@ -7,6 +7,5 @@ func _ready():
 
 
 func _draw():
-	print($"../..".position.x)
 	draw_circle(Vector2(0,0), 2., Color(0, 0, 0, .8))
 	

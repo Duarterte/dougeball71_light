@@ -1,7 +1,7 @@
 extends Control
 
-var gameName: String = "Dodgeball 71"
-var version: String  = "V0.0.2"
+var gameName: String = "Dodgeball Ligth"
+var version: String  = ""
 var firstBoot: bool  = true
 var config: Array[bool]
 var configValues: Dictionary
