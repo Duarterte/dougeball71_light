@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkapkdl70uvkh"]
+[gd_scene load_steps=11 format=3 uid="uid://dkapkdl70uvkh"]
 
 [ext_resource type="Script" path="res://characters/zomby.gd" id="1_6p1gq"]
 [ext_resource type="AudioStream" uid="uid://cl8bp082gu3u0" path="res://characters/sounds/DodgeballHit.mp3" id="2_3jfjv"]
 [ext_resource type="AudioStream" uid="uid://djd4vwqvfse6s" path="res://characters/sounds/punch.mp3" id="3_407ol"]
+[ext_resource type="AudioStream" uid="uid://csj45gkr6wf0w" path="res://characters/sounds/step.mp3" id="4_exnw0"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3rivp"]
 points = PackedVector3Array(-0.492721, 1.06337, 0.0129468, -0.465133, 1.09111, 0.635793, -0.492721, 1.21275, 0.0129468, -0.224753, 1.79323, -0.18715, -0.228804, 0.742149, -0.123673, -0.239994, 4.61874e-08, -0.0621299, -0.239994, 4.61874e-08, 0.0930178, 0.465036, 1.09111, 0.635793, -0.465133, 1.18502, 0.635793, -0.224753, 1.79323, 0.227221, 0.224657, 1.79323, -0.18715, 0.228708, 0.742149, -0.123673, 0.239897, 4.61874e-08, -0.0621299, 0.239897, 4.61874e-08, 0.0930178, 0.492624, 1.06337, 0.0129468, 0.465036, 1.18502, 0.635793, 0.224657, 1.79323, 0.227221, 0.492624, 1.21275, 0.0129468)
@@ -125,5 +126,13 @@ unit_size = 50.0
 
 [node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_407ol")
+
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_exnw0")
+attenuation_model = 1
+volume_db = 11.723
+unit_size = 5.0
+max_distance = 14.0
+panning_strength = 5.0
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

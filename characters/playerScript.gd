@@ -6,7 +6,6 @@ const JUMP_VELOCITY = 4.5
 var ball = preload("res://assets/ball.tscn")
 @onready var playerCamera = $PlayerCamera
 @onready var sensivity: float = SGlobal.configValues[SGlobal.SENSIVITY] if SGlobal.config[SGlobal.SENSIVITY] else SGlobal.setSensivity(.2)
-@onready var lifes: int = 5
 var ballInstance: RigidBody3D
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -26,6 +25,10 @@ func getHit():
 func _ready():
 	$PlayerCamera/cameraPostProcessing.get_active_material(0).albedo_color = Color(0, 0, 0, 0)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if SGlobal.config[SGlobal.MUSIC]:
+		$Music.play()
+	else:
+		$Music.stop()
 	
 func _input(event):
 	if event is InputEventMouseMotion	:
@@ -42,7 +45,8 @@ func _input(event):
 	
 		
 func _physics_process(delta):
-	if lifes < 1:
+	if SGlobal.lives < 1:
+		SGlobal.ZombieNumber = 0
 		get_tree().change_scene_to_file("res://logic/rootScn.tscn")
 	if ballInstance != null and isBallPlaying and Input.is_action_pressed("Throw"):
 		ballInstance.global_position = global_transform.origin+(-global_transform.basis.z.normalized())+(global_transform.basis.y.normalized()*1.45+global_transform.basis.x.normalized()*.5)

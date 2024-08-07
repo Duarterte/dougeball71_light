@@ -1,26 +1,27 @@
-[gd_scene load_steps=14 format=3 uid="uid://cks7v6wj1ikb8"]
+[gd_scene load_steps=15 format=3 uid="uid://cks7v6wj1ikb8"]
 
 [ext_resource type="Script" path="res://logic/configuration/ZVMmain.gd" id="1_a3e34"]
 [ext_resource type="PackedScene" uid="uid://cw82d5se1l0j6" path="res://characters/player.tscn" id="2_bcxd7"]
+[ext_resource type="Texture2D" uid="uid://dsgp3cl2v040x" path="res://world/textures/resting_place_1k.hdr" id="2_eop6g"]
 [ext_resource type="Texture2D" uid="uid://dvbfcbmunfy0e" path="res://world/textures/terrain_joda.png" id="2_m5gju"]
 [ext_resource type="Shader" path="res://world/shaders/clip_map.gdshader" id="2_plshp"]
 [ext_resource type="PackedScene" uid="uid://bedj5roxowdy1" path="res://logic/in_game_logic/spawner.tscn" id="4_ku2xq"]
 [ext_resource type="Script" path="res://world/Terrain.gd" id="4_p1x8v"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_slx7c"]
-sky_top_color = Color(0, 1, 1, 1)
-sky_horizon_color = Color(0.55, 0.79225, 0.78325, 1)
-ground_horizon_color = Color(0.55, 0.79225, 0.78325, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_h2lvh"]
+panorama = ExtResource("2_eop6g")
+filter = false
 
-[sub_resource type="Sky" id="Sky_jm3qi"]
-sky_material = SubResource("ProceduralSkyMaterial_slx7c")
+[sub_resource type="Sky" id="Sky_ivghr"]
+sky_material = SubResource("PanoramaSkyMaterial_h2lvh")
 
 [sub_resource type="Environment" id="Environment_i4kve"]
-background_mode = 1
-background_color = Color(0.813655, 0.857921, 0.987665, 1)
-sky = SubResource("Sky_jm3qi")
+background_mode = 2
+sky = SubResource("Sky_ivghr")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
 reflected_light_source = 1
-tonemap_mode = 1
+tonemap_mode = 2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_usrjg"]
 render_priority = 0
@@ -83,6 +84,7 @@ skeleton = NodePath("")
 script = ExtResource("4_p1x8v")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="world/Terrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/Terrain/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_p27iq")

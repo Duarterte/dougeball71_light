@@ -4,6 +4,7 @@ var sesivityRangeVal: float
 func _ready():
 	playMenuSounds()
 	$ZVmain/VBoxContainer/MarginContainer/HSplitContainer/CheckButton.button_pressed = SGlobal.config[SGlobal.SHOWFPS]
+	$ZVmain/VBoxContainer/MarginContainer4/HSplitContainer/CheckButton2.button_pressed = SGlobal.config[SGlobal.MUSIC]
 	if SGlobal.config[SGlobal.SENSIVITY]:
 		sensText.text = str(SGlobal.configValues[SGlobal.SENSIVITY])
 	else:
@@ -47,3 +48,7 @@ func _on_z_vmain_gui_input(event):
 	if event is InputEventMouseButton:
 		sensText.deselect()
 		sensText.release_focus()
+
+
+func _on_check_button_2_toggled(toggled_on):
+	SGlobal.config[SGlobal.MUSIC] = toggled_on

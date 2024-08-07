@@ -6,7 +6,7 @@ var currentFrame = 0
 func _ready():
 	visible = false
 	$AnimationPlayer.play("walkdeath")
-	
+	$AudioStreamPlayer3D3.play()
 	
 func persuit(frame: int, draw: int, offset: int, speed: float)->void:
 	if isAlive and (frame%(draw)-offset) == 0:
@@ -14,8 +14,8 @@ func persuit(frame: int, draw: int, offset: int, speed: float)->void:
 		if global_position.distance_to(player.global_position) > 1.5:
 			global_position += -global_transform.basis.z.normalized()*speed
 		else:
-			global_position += global_transform.basis.z.normalized()*3.
-			player.lifes -= 1
+			global_position += global_transform.basis.z.normalized()*(3.+(fmod(SGlobal.ZombieNumber,12.)))
+			SGlobal.lives -= 1
 			$AudioStreamPlayer3D2.play(0.0)
 			player.getHit()
 	else: return
@@ -29,7 +29,9 @@ func persuit(frame: int, draw: int, offset: int, speed: float)->void:
 func _on_area_3d_body_entered(body):	
 	visible = false
 	var ballHitSound: AudioStreamPlayer3D = $AudioStreamPlayer3D
-	if isAlive: ballHitSound.play(0)
+	if isAlive: 
+		ballHitSound.play(0)
+		SGlobal.ZombieNumber += 1
 	isAlive = false
 	body.queue_free()
 	global_position.y = -100

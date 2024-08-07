@@ -34,6 +34,23 @@ grow_vertical = 2
 pivot_offset = Vector2(115.264, 62.088)
 alignment = 1
 
+[node name="MarginContainer4" type="MarginContainer" parent="ZVmain/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ZVmain/VBoxContainer/MarginContainer4"]
+layout_mode = 2
+
+[node name="CheckButton2" type="CheckButton" parent="ZVmain/VBoxContainer/MarginContainer4/HSplitContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="ZVmain/VBoxContainer/MarginContainer4/HSplitContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ZVmain/VBoxContainer/MarginContainer4/HSplitContainer/PanelContainer"]
+layout_mode = 2
+text = "Music"
+horizontal_alignment = 1
+
 [node name="MarginContainer" type="MarginContainer" parent="ZVmain/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -96,6 +113,7 @@ text = "Go Back"
 
 [connection signal="gui_input" from="ZVmain" to="." method="_on_z_vmain_gui_input"]
 [connection signal="gui_input" from="ZVmain/VBoxContainer" to="." method="_on_v_box_container_gui_input"]
+[connection signal="toggled" from="ZVmain/VBoxContainer/MarginContainer4/HSplitContainer/CheckButton2" to="." method="_on_check_button_2_toggled"]
 [connection signal="toggled" from="ZVmain/VBoxContainer/MarginContainer/HSplitContainer/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="mouse_exited" from="ZVmain/VBoxContainer/MarginContainer3" to="." method="_on_margin_container_3_mouse_exited"]
 [connection signal="gui_input" from="ZVmain/VBoxContainer/MarginContainer3/HSplitContainer/sensText" to="." method="_on_sens_text_gui_input"]

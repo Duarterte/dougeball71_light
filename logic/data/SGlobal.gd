@@ -1,15 +1,17 @@
 extends Control
 
-var gameName: String = "Dodgeball Ligth"
+var gameName: String = "Dodgeball Seventy-One Ligth"
 var version: String  = ""
 var firstBoot: bool  = true
 var config: Array[bool]
 var configValues: Dictionary
-
+var ZombieNumber: int = 0
+var lives: int = 5
 enum {
 	FIRSTBOOT,
 	SHOWFPS,
-	SENSIVITY
+	SENSIVITY,
+	MUSIC
 }
 
 func initialConfig(numberOfConfigs: int) -> void:
@@ -17,9 +19,9 @@ func initialConfig(numberOfConfigs: int) -> void:
 	config[FIRSTBOOT] = true
 	config[SHOWFPS]   = false
 	config[SENSIVITY] = false
-	
+	config[MUSIC] = true
 func _ready():
-	initialConfig(3)
+	initialConfig(4)
 	print(gameName + " " + version)
 	
 func setSensivity(sensv):

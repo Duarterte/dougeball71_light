@@ -25,6 +25,10 @@ GMenu="*res://logic/configuration/ZVMmain.tscn"
 
 [display]
 
+window/size/viewport_width=928
+window/size/viewport_height=522
+window/size/mode=2
+window/stretch/mode="viewport"
 window/vsync/vsync_mode=2
 mouse_cursor/custom_image="res://logic/ui/cursorsmall.png"
 mouse_cursor/custom_image_hotspot=Vector2(12, 9)

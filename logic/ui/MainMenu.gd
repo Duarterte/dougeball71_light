@@ -5,8 +5,14 @@ extends Menu
 func _ready():
 	playMenuSounds()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	if SGlobal.lives < 1:
+		SGlobal.lives = 5;
 	if SGlobal.gameName: gametTilteLabel.text = SGlobal.gameName
 	if SGlobal.gameName: versionLabel.text    = SGlobal.version
+	if SGlobal.ZombieNumber > 0:
+		$VBoxContainer/MarginContainer/StartBTN.text = "Continue"
+	else:
+		$VBoxContainer/MarginContainer/StartBTN.text = "Start"
 	if SGlobal.config[SGlobal.FIRSTBOOT]:
 		$AnimationPlayer.play("curtainAnim", 0.)
 		await get_tree().create_timer(2.).timeout

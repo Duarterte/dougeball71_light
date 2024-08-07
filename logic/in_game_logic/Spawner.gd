@@ -12,7 +12,7 @@ func instansiateZombies():
 	var zombiInstance: Node3D = zombieNode.instantiate()
 	zombiInstance.player = player
 	add_child(zombiInstance)
-	zombiInstance.global_position = Vector3(0, -10, 0)
+	zombiInstance.global_position = Vector3(0, -30, 0)
 	#instance_from_id(zombiInstance.get_instance_id()).visible = true
 	zombies.append(zombiInstance)
 
@@ -29,6 +29,17 @@ func _process(delta):
 		aliveZombies[i].persuit(currentFrame, 3, i%3, .15)
 		
 func _on_timer_timeout():
+	if SGlobal.ZombieNumber > 75:
+		$Timer.wait_time = 1. 
+	elif SGlobal.ZombieNumber > 50:
+		$Timer.wait_time = 1.5
+	elif SGlobal.ZombieNumber > 30:
+		$Timer.wait_time = 2.
+	elif SGlobal.ZombieNumber > 10:
+		$Timer.wait_time = 2.5
+	else:
+		$Timer.wait_time = 3.
+	
 	var zmb: Node3D = zombies[currentZombieIteration]
 	if not zmb.isAlive:
 		if is_instance_valid(aliveZombies.find(zmb)): aliveZombies.erase(aliveZombies.find(zmb))
