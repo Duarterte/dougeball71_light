@@ -2,15 +2,14 @@
 
 [ext_resource type="Script" path="res://logic/configuration/ZVMmain.gd" id="1_a3e34"]
 [ext_resource type="PackedScene" uid="uid://cw82d5se1l0j6" path="res://characters/player.tscn" id="2_bcxd7"]
-[ext_resource type="Texture2D" uid="uid://dsgp3cl2v040x" path="res://world/textures/resting_place_1k.hdr" id="2_eop6g"]
+[ext_resource type="Texture2D" uid="uid://f7ld26v5nqjd" path="res://world/textures/resting_place_2k.png" id="2_lm4h3"]
 [ext_resource type="Texture2D" uid="uid://dvbfcbmunfy0e" path="res://world/textures/terrain_joda.png" id="2_m5gju"]
 [ext_resource type="Shader" path="res://world/shaders/clip_map.gdshader" id="2_plshp"]
 [ext_resource type="PackedScene" uid="uid://bedj5roxowdy1" path="res://logic/in_game_logic/spawner.tscn" id="4_ku2xq"]
 [ext_resource type="Script" path="res://world/Terrain.gd" id="4_p1x8v"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_h2lvh"]
-panorama = ExtResource("2_eop6g")
-filter = false
+panorama = ExtResource("2_lm4h3")
 
 [sub_resource type="Sky" id="Sky_ivghr"]
 sky_material = SubResource("PanoramaSkyMaterial_h2lvh")

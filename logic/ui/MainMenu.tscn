@@ -153,7 +153,6 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="SceneEntryCurtain" type="ColorRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.999

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsgp3cl2v040x"
-path.bptc="res://.godot/imported/resting_place_1k.hdr-ef579c1f12c4a2c33bae39af16b3bd5d.bptc.ctex"
+uid="uid://f7ld26v5nqjd"
+path.s3tc="res://.godot/imported/resting_place_2k.png-969f66a2b8e23d06276838aff210aae3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://world/textures/resting_place_1k.hdr"
-dest_files=["res://.godot/imported/resting_place_1k.hdr-ef579c1f12c4a2c33bae39af16b3bd5d.bptc.ctex"]
+source_file="res://world/textures/resting_place_2k.png"
+dest_files=["res://.godot/imported/resting_place_2k.png-969f66a2b8e23d06276838aff210aae3.s3tc.ctex"]
 
 [params]
 
